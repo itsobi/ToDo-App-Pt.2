@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,500&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+p {
+  font-size: 1.6rem;
+  line-height: 1.5;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+/* START */
+/* start */
+h1, form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  padding: 5rem 0;
+  font-size: 3rem;
+}
+
+form input, form button {
+  padding: 1rem;
+  font-size: 2rem;
+  border: none;
+  outline: none;
+}
+
+form button {
+  border-radius: 3px;
+  cursor: pointer;
+  margin-left: 1rem;
+}
+
+.todo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.todo-list {
+  list-style: none;
+  width: 20%;
+}
+
+.todo {
+  margin: 0.5rem;
+  font-size: 2rem;
+  display: flex;
+  justify-content: space-between;
+  background-color: #eee;
+}
+.todo-item {
+  padding: 0 1rem;
+}
+
+
+.delete-btn {
+  border: none;
+  padding: 1rem;
+  font-size: 1.6rem;
+  cursor: pointer;
+  background-color: orangered;
+}
+
+.fa-trash-alt {
+  pointer-events: none;
+}
+
+@media screen and (max-width:600px) {
+  .todo-list {
+    width: 100%;
+  }
+}
