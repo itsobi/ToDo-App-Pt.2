@@ -7,18 +7,18 @@ todoButton.addEventListener("click", addTodo);
 todoList.addEventListener("click", deleteTodo);
 
 // fetch API function
-function fetchApi() {
-   fetch("https://jsonplaceholder.typicode.com/todos/1")
-    .then((data) => {
-        return data.json()
-    }) 
-    .then((data) => {
-        let todos = [];
-        todos.push(data.title)
-        console.log(todos);
-    })
+const fetchApi = () => {
+    todos = []
+    axios.get("https://jsonplaceholder.typicode.com/todos")
+        .then(response => {
+            const responseData = response.data;
+            for (let i = 0; i < 5; i++) {
+                todos.push(responseData[i].title);
+            }
+            localStorage.setItem("todos", JSON.stringify(todos))
+        })
 }
-fetchApi();
+
 
 // Add todo Function
 function addTodo(e) {
@@ -83,7 +83,7 @@ function saveLocalStorage(todo) {
 function getTodos() {
     let todos;
     if (localStorage.getItem("todos") === null) {
-        todos = [];
+        fetchApi();;
     } else {
         todos = JSON.parse(localStorage.getItem("todos"));
     }
