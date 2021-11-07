@@ -83,7 +83,7 @@ function saveLocalStorage(todo) {
 function getTodos() {
     let todos;
     if (localStorage.getItem("todos") === null) {
-        fetchApi();;
+        fetchApi();
     } else {
         todos = JSON.parse(localStorage.getItem("todos"));
     }
