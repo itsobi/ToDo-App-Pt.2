@@ -8,7 +8,7 @@ todoList.addEventListener("click", deleteTodo);
 
 // fetch API function
 const fetchApi = () => {
-    todos = []
+    let todos = []
     axios.get("https://jsonplaceholder.typicode.com/todos")
         .then(response => {
             const responseData = response.data;
@@ -17,6 +17,8 @@ const fetchApi = () => {
             }
             localStorage.setItem("todos", JSON.stringify(todos))
         })
+
+        getTodos();
 }
 
 
@@ -81,7 +83,7 @@ function saveLocalStorage(todo) {
 
 // GET TODO FUNCTION
 function getTodos() {
-    let todos;
+    let todos = [];
     if (localStorage.getItem("todos") === null) {
         fetchApi();
     } else {
